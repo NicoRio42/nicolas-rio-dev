@@ -1,0 +1,15 @@
+---
+import { Picture } from "astro:assets";
+import niclasRio from "@assets/nicolas-rio.jpeg";
+---
+
+<header>
+  <Picture
+    src={niclasRio}
+    formats={["avif", "webp"]}
+    alt="Le portrait de Nicolas Rio"
+    class="w-48 h-48 rounded-full"
+  />
+
+  <h1>Nicolas Rio</h1>
+</header>

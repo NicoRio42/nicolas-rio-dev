@@ -1,0 +1,27 @@
+---
+import Experiences from "@components/Experiences.astro";
+import Header from "@components/Header.astro";
+
+export function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: undefined } }];
+}
+
+const locale = Astro.params.locale ?? "fr";
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <Experiences />
+    </main>
+  </body>
+</html>

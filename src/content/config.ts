@@ -10,6 +10,8 @@ const experiencesCollection = defineCollection({
       image: image(),
       from: z.date(),
       to: z.date().optional(),
+      skills: z.string().array(),
+      order: z.number(),
     }),
 });
 

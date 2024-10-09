@@ -1,10 +1,10 @@
 ---
-title: Ingénieur Fullstack | Projet Parcours-orientation.fr
-employerOrClient: Geodezic
-link: https://parcours-orientation.fr/
-image: "@assets/logo-parcours-orientation-fr.svg"
-from: 2024-04-01T00:00:00Z
-to: 2024-09-30T00:00:00Z
+title: Ingénieur Fullstack | Projet Routechoice DB
+employerOrClient: Fédération Française de Course d'Orientation
+link: https://routechoice-db.com/
+image: "@assets/routechoice-db.png"
+from: 2022-01-01T00:00:00Z
+to: 2024-06-30T00:00:00Z
 skills:
   - Analyse des besoins
   - SvelteKit
@@ -13,10 +13,9 @@ skills:
   - HTML/CSS
   - Typescript
   - SQLite
-  - Progressive Web App
-  - Maplibre
+  - OpenLayers
   - Cloud computing
-order: 1
+order: 2
 ---
 
 ### 📖 Contexte et enjeux

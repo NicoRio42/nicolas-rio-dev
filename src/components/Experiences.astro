@@ -2,8 +2,6 @@
 import { getCollection } from "astro:content";
 
 const allExperiences = await getCollection("experiences");
-
-console.log(allExperiences);
 ---
 
 {
@@ -11,7 +9,9 @@ console.log(allExperiences);
     const { Content } = await experience.render();
     return (
       <article>
-        <h2>{experience.data.title}</h2>
+        <h2>
+          <strong>{experience.data.title}</strong>
+        </h2>
 
         <div class="prose">
           <Content />

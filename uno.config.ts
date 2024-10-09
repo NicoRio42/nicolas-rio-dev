@@ -6,5 +6,13 @@ import {
 } from "unocss";
 
 export default defineConfig({
-  presets: [presetUno(), presetAttributify(), presetTypography()],
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetTypography({
+      cssExtend: {
+        h3: { "font-size": "1rem" },
+      },
+    }),
+  ],
 });

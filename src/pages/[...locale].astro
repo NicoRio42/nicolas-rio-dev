@@ -18,10 +18,10 @@ const locale = Astro.params.locale ?? "fr";
     <title>Astro</title>
   </head>
   <body>
-    <Header />
+    <main max-w-170 mx-auto>
+      <Header />
 
-    <main>
-      <Experiences />
+      <Experiences locale={locale} />
     </main>
   </body>
 </html>

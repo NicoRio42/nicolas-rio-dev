@@ -1,19 +1,30 @@
 ---
 import { getCollection } from "astro:content";
 
-const allExperiences = await getCollection("experiences");
+export interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+
+const allExperiences = (await getCollection("experiences"))
+  .filter((experience) => experience.slug.startsWith(locale))
+  .sort(
+    (experience1, experience2) =>
+      experience1.data.order - experience2.data.order
+  );
 ---
 
 {
   allExperiences.map(async (experience) => {
     const { Content } = await experience.render();
     return (
-      <article>
-        <h2>
-          <strong>{experience.data.title}</strong>
+      <article p-8 shadow-2xl rounded mt-8>
+        <h2 text-5 font-bold>
+          {experience.data.title}
         </h2>
 
-        <div class="prose">
+        <div class="prose" max-w-full>
           <Content />
         </div>
       </article>

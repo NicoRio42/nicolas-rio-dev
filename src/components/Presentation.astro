@@ -1,0 +1,15 @@
+---
+import { Content as FrenchContent } from "@content/_presentation/fr.md";
+import { Content as EnglishContent } from "@content/_presentation/en.md";
+import type { Locale } from "@models/locale";
+
+export interface Props {
+  locale: Locale;
+}
+---
+
+<article py-8 mt-8>
+  <div class="prose prose-neutral" max-w-full text-justify>
+    {Astro.props.locale === "fr" ? <FrenchContent /> : <EnglishContent />}
+  </div>
+</article>

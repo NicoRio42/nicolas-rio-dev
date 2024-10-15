@@ -1,15 +1,33 @@
 ---
 import { Picture } from "astro:assets";
 import niclasRio from "@assets/nicolas-rio.jpeg";
+import labels from "@content/_labels.json";
+import type { Locale } from "@models/locale";
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
 ---
 
-<header>
+<header mt-8 flex="~ col sm:row" justify-between items-stretch gap-8>
   <Picture
     src={niclasRio}
     formats={["avif", "webp"]}
     alt="Le portrait de Nicolas Rio"
-    class="w-48 h-48 rounded-full"
+    class="w-48 h-48 rounded-full mx-auto"
   />
 
-  <h1>Nicolas Rio</h1>
+  <div flex="~ col" justify-center text="left sm:right">
+    <h1 class="heading" text-8 leading-none>
+      <div>Nicolas</div>
+
+      <div uppercase font-bold>Rio</div>
+    </h1>
+
+    <p>{labels.role[locale]}</p>
+
+    <p>INSA Lyon</p>
+  </div>
 </header>

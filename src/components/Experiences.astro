@@ -1,8 +1,11 @@
 ---
+import type { Locale } from "@models/locale";
 import { getCollection } from "astro:content";
+import labels from "@content/_labels.json";
+import ExperienceItem from "./ExperienceItem.astro";
 
 export interface Props {
-  locale: string;
+  locale: Locale;
 }
 
 const { locale } = Astro.props;
@@ -15,19 +18,18 @@ const allExperiences = (await getCollection("experiences"))
   );
 ---
 
+<h2 font-heading text="12 primary">
+  {labels.experience.heading[locale]}
+</h2>
+
 {
   allExperiences.map(async (experience) => {
     const { Content } = await experience.render();
+    experience.data.image;
     return (
-      <article p-8 shadow-2xl rounded mt-8>
-        <h2 text-5 font-bold>
-          {experience.data.title}
-        </h2>
-
-        <div class="prose" max-w-full>
-          <Content />
-        </div>
-      </article>
+      <ExperienceItem data={experience.data} locale={locale}>
+        <Content />
+      </ExperienceItem>
     );
   })
 }

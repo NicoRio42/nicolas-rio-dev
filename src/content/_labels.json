@@ -1,0 +1,20 @@
+{
+  "role": {
+    "fr": "Ingénieur full stack | Sveltekit | Géomatique",
+    "en": "Full stack Engineer | Sveltekit | Geomatic"
+  },
+  "experience": {
+    "heading": {
+      "fr": "Expériences",
+      "en": "Experiences"
+    },
+    "show-more": {
+      "fr": "Voir plus",
+      "en": "Show more"
+    },
+    "show-less": {
+      "fr": "Voir moins",
+      "en": "Show less"
+    }
+  }
+}

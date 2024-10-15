@@ -1,9 +1,13 @@
 ---
 import Experiences from "@components/Experiences.astro";
 import Header from "@components/Header.astro";
+import Presentation from "@components/Presentation.astro";
 
 export function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: undefined } }];
+  return [
+    { params: { locale: "en" as const } },
+    { params: { locale: undefined } },
+  ];
 }
 
 const locale = Astro.params.locale ?? "fr";
@@ -17,9 +21,11 @@ const locale = Astro.params.locale ?? "fr";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
-    <main max-w-170 mx-auto>
-      <Header />
+  <body font-sans>
+    <main max-w-170 mx-auto px-4>
+      <Header locale={locale} />
+
+      <Presentation locale={locale} />
 
       <Experiences locale={locale} />
     </main>

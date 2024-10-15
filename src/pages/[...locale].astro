@@ -21,7 +21,8 @@ const locale = Astro.params.locale ?? "fr";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body font-sans>
+
+  <body font-sans pb-12>
     <main max-w-170 mx-auto px-4>
       <Header locale={locale} />
 
@@ -29,5 +30,14 @@ const locale = Astro.params.locale ?? "fr";
 
       <Experiences locale={locale} />
     </main>
+
+    <a
+      href={locale === "fr" ? "/en" : "/"}
+      class="fixed bottom-4 right-4 bg-white rounded border-solid border-1 border-primary text-primary flex items-center gap-2 py-1 px-2"
+    >
+      <i i-carbon-translate inline-block w-5 h-5></i>
+
+      {locale === "fr" ? "English" : "Français"}
+    </a>
   </body>
 </html>

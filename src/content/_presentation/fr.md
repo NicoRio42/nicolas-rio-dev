@@ -1,5 +1,3 @@
-## 👋 Bonjour !
-
 Diplômé de l'INSA Lyon, je suis Ingénieur en technologie de l'information avec plusieurs années d'expérience dans le développement web full stack et la géomatique. Spécialisé dans la gestion de projets de bout en bout, j'accompagne mes clients depuis la compréhension du besoin jusqu'à la livraison, tout en garantissant des solutions sur mesure, robustes et évolutives.
 
 Avec une solide expertise en front-end (HTML, CSS, JavaScript et TypeScript avec ou sans framework) et back-end (Node.js, SQL), j’ai également des compétences dans les systèmes d'information géographique (SIG) et les applications cartographiques.

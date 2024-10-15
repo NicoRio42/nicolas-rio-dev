@@ -1,5 +1,3 @@
-## 👋 Hello!
-
 I'm an Information Technology Engineer with several years' experience in full-stack web development and geomatics. Specializing in end-to-end project management, I support my customers from understanding their needs through to delivery, while guaranteeing tailor-made, robust and scalable solutions.
 
 With solid expertise in front-end (HTML, CSS, JavaScript and TypeScript with or without framework) and back-end (Node.js, SQL), I also have skills in geographic information systems (GIS) and mapping applications.

@@ -1,0 +1,108 @@
+---
+import labels from "@content/_labels.json";
+import type { Locale } from "@models/locale";
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<script>
+  class ExpandableArticle extends HTMLElement {
+    connectedCallback() {
+      const showMoreButton = this.querySelector(".show-more-button");
+      const contentDiv = this.querySelector(".content-div div");
+      if (showMoreButton === null || contentDiv === null) return;
+
+      showMoreButton.addEventListener("click", () => {
+        this.style.setProperty(
+          "--content-div-height",
+          `${contentDiv.clientHeight}px`
+        );
+        this.classList.toggle("reduced");
+      });
+    }
+  }
+
+  customElements.define("expandable-article", ExpandableArticle);
+</script>
+
+<expandable-article class="block py-8 reduced">
+  <div overflow-y-hidden class="content-div">
+    <div>
+      <slot />
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="show-more-button"
+    mt-4
+    mx-auto
+    flex
+    items-center
+    gap-2
+  >
+    <span class="show-more">
+      {labels["show-more"][locale]}
+    </span>
+
+    <span class="show-less">
+      {labels["show-less"][locale]}
+    </span>
+
+    <i i-carbon-chevron-down inline-block w-5 h-5 class="arrow-icon"></i>
+  </button>
+</expandable-article>
+
+<style>
+  .content-div {
+    max-height: var(--content-div-height);
+    transition: max-height 0.5s ease;
+    position: relative;
+  }
+
+  .reduced .content-div {
+    max-height: 20rem;
+    transition: max-height 0.5s ease;
+  }
+
+  .arrow-icon {
+    transition: transform 0.5s ease;
+    transform: rotate(180deg);
+  }
+
+  .reduced .arrow-icon {
+    transition: transform 0.5s ease;
+    transform: rotate(0);
+  }
+
+  .reduced .content-div::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0), #fff);
+  }
+
+  .show-more {
+    display: none;
+  }
+
+  .show-less {
+    display: block;
+  }
+
+  .reduced .show-more {
+    display: block;
+  }
+
+  .reduced .show-less {
+    display: none;
+  }
+</style>

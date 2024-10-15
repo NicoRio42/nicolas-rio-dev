@@ -2,14 +2,20 @@
 import { Content as FrenchContent } from "@content/_presentation/fr.md";
 import { Content as EnglishContent } from "@content/_presentation/en.md";
 import type { Locale } from "@models/locale";
+import labels from "@content/_labels.json";
+import ExpandableArticle from "./ExpandableArticle.astro";
 
 export interface Props {
   locale: Locale;
 }
+
+const { locale } = Astro.props;
 ---
 
-<article py-8 mt-8>
+<ExpandableArticle locale={locale}>
   <div class="prose prose-neutral" max-w-full text-justify>
-    {Astro.props.locale === "fr" ? <FrenchContent /> : <EnglishContent />}
+    <h2 text-6 font-bold mt-0>{labels.hello[locale]}</h2>
+
+    {locale === "fr" ? <FrenchContent /> : <EnglishContent />}
   </div>
-</article>
+</ExpandableArticle>

@@ -15,10 +15,24 @@
     "fr": "Voir moins",
     "en": "Show less"
   },
-  "experience": {
+  "experiences": {
     "heading": {
-      "fr": "Expériences",
-      "en": "Experiences"
+      "fr": "EXPÉRIENCES",
+      "en": "EXPERIENCES"
+    },
+    "from": {
+      "fr": "du",
+      "en": "from"
+    },
+    "to": {
+      "fr": "au",
+      "en": "to"
+    }
+  },
+  "references": {
+    "heading": {
+      "fr": "RÉFÉRENCES",
+      "en": "REFERENCES"
     }
   }
 }

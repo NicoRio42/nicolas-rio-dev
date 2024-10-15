@@ -2,6 +2,7 @@
 import Experiences from "@components/Experiences.astro";
 import Header from "@components/Header.astro";
 import Presentation from "@components/Presentation.astro";
+import References from "@components/References.astro";
 
 export function getStaticPaths() {
   return [
@@ -29,6 +30,8 @@ const locale = Astro.params.locale ?? "fr";
       <Presentation locale={locale} />
 
       <Experiences locale={locale} />
+
+      <References locale={locale} />
     </main>
 
     <a

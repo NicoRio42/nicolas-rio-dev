@@ -18,18 +18,37 @@ const allExperiences = (await getCollection("experiences"))
   );
 ---
 
-<h2 font-heading text="12 primary">
-  {labels.experience.heading[locale]}
+<h2 flex items-center gap-2 font-heading text="6 primary" mt-8>
+  <i i-carbon-crop-growth inline-block w-8 h-8></i>
+
+  {labels.experiences.heading[locale]}
 </h2>
 
-{
-  allExperiences.map(async (experience) => {
-    const { Content } = await experience.render();
-    experience.data.image;
-    return (
-      <ExperienceItem data={experience.data} locale={locale}>
-        <Content />
-      </ExperienceItem>
-    );
-  })
-}
+<div border-l="solid 1 primary" ml-4 pl-6 translate-y="-2">
+  {
+    allExperiences.map(async (experience, index) => {
+      const { Content } = await experience.render();
+
+      return (
+        <div relative>
+          {index === allExperiences.length - 1 && (
+            <div absolute w-4 h-full bg-white class="-left-7 top-10" />
+          )}
+
+          <span
+            absolute
+            w="2.5"
+            h="2.5"
+            bg-primary
+            rounded-full
+            class="-left-7.25 top-10"
+          />
+
+          <ExperienceItem data={experience.data} locale={locale}>
+            <Content />
+          </ExperienceItem>
+        </div>
+      );
+    })
+  }
+</div>

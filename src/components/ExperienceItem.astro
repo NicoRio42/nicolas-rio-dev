@@ -2,6 +2,7 @@
 import type { InferEntrySchema } from "astro:content";
 import type { Locale } from "@models/locale";
 import ExpandableArticle from "./ExpandableArticle.astro";
+import labels from "@content/_labels.json";
 
 export interface Props {
   locale: Locale;
@@ -9,12 +10,38 @@ export interface Props {
 }
 
 const { data, locale } = Astro.props;
+
+const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "short" });
 ---
 
 <ExpandableArticle locale={locale}>
-  <h2 class="heading" text-5 font-bold>
+  <h2 class="heading" text="4.5" font-bold>
     {data.title}
   </h2>
+
+  <p flex items-center gap-2 text="[#404040]" mt-2>
+    <i i-carbon-calendar inline-block h-5 w-5></i>
+
+    <span>
+      {labels.experiences.from[locale]}
+
+      <time datetime={data.from.toISOString()}
+        >{formatter.format(data.from)}</time
+      >
+
+      {
+        data.to !== undefined && (
+          <>
+            {labels.experiences.to[locale]}
+
+            <time datetime={data.to.toISOString()}>
+              {formatter.format(data.to)}
+            </time>
+          </>
+        )
+      }
+    </span>
+  </p>
 
   <div class="prose prose-neutral" max-w-full text-justify>
     <slot />

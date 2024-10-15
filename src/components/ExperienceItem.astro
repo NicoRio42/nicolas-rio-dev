@@ -41,10 +41,28 @@ const { data, locale } = Astro.props;
       <div class="prose prose-neutral" max-w-full text-justify>
         <slot />
       </div>
+
+      <ul flex="~ wrap" gap-2>
+        {
+          data.skills.map((skill) => (
+            <li text="3.5 white" bg-primary px-2 rounded>
+              {skill}
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 
-  <button type="button" class="show-more-button" mt-4 flex items-center gap-2>
+  <button
+    type="button"
+    class="show-more-button"
+    mt-4
+    mx-auto
+    flex
+    items-center
+    gap-2
+  >
     <span class="show-more">
       {labels.experience["show-more"][locale]}
     </span>
@@ -86,7 +104,7 @@ const { data, locale } = Astro.props;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 3rem;
+    height: 5rem;
     background: linear-gradient(rgba(0, 0, 0, 0), #fff);
   }
 

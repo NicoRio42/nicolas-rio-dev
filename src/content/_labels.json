@@ -34,5 +34,19 @@
       "fr": "RÉFÉRENCES",
       "en": "REFERENCES"
     }
+  },
+  "footer": {
+    "build-with-1": {
+      "fr": "Créé avec",
+      "en": "Built with"
+    },
+    "build-with-2": {
+      "fr": "et",
+      "en": "and"
+    },
+    "source-code": {
+      "fr": "Code source",
+      "en": "Source code"
+    }
   }
 }

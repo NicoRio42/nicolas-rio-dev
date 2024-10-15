@@ -1,8 +1,11 @@
 ---
+import Contact from "@components/Contact.astro";
 import Experiences from "@components/Experiences.astro";
+import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Presentation from "@components/Presentation.astro";
 import References from "@components/References.astro";
+import labels from "@content/_labels.json";
 
 export function getStaticPaths() {
   return [
@@ -23,24 +26,67 @@ const locale = Astro.params.locale ?? "fr";
     <title>Astro</title>
   </head>
 
-  <body font-sans pb-12>
-    <main max-w-170 mx-auto px-4>
-      <Header locale={locale} />
+  <body font-sans>
+    <main>
+      <div w-full h-8 bg-gray-600></div>
 
-      <Presentation locale={locale} />
+      <div max-w-170 mx-auto px-4>
+        <Header locale={locale} />
 
-      <Experiences locale={locale} />
+        <Presentation locale={locale} />
 
-      <References locale={locale} />
+        <Experiences locale={locale} />
+
+        <References locale={locale} />
+
+        <Contact />
+      </div>
+
+      <Footer locale={locale} />
     </main>
 
-    <a
-      href={locale === "fr" ? "/en" : "/"}
-      class="fixed bottom-4 right-4 bg-white rounded border-solid border-1 border-primary text-primary flex items-center gap-2 py-1 px-2"
-    >
-      <i i-carbon-translate inline-block w-5 h-5></i>
+    <div fixed bottom-4 right-4 flex="~ col gap-2">
+      <article>
+        <ul>
+          <li>
+            <a href="#experiences">{labels.experiences.heading[locale]}</a>
+          </li>
 
-      {locale === "fr" ? "English" : "Français"}
-    </a>
+          <li>
+            <a href="#references">{labels.references.heading[locale]}</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </article>
+
+      <button
+        type="button"
+        bg-white
+        rounded
+        border="solid 1 primary"
+        text-primary
+        flex
+        items-center
+        gap-2
+        py-1
+        px-2
+      >
+        <i i-carbon-menu inline-block w-5 h-5></i>
+
+        Menu
+      </button>
+
+      <a
+        href={locale === "fr" ? "/en" : "/"}
+        class="bg-white rounded border-solid border-1 border-primary text-primary flex items-center gap-2 py-1 px-2"
+      >
+        <i i-carbon-translate inline-block w-5 h-5></i>
+
+        {locale === "fr" ? "English" : "Français"}
+      </a>
+    </div>
   </body>
 </html>

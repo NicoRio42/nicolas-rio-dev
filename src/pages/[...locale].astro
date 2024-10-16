@@ -6,6 +6,7 @@ import Header from "@components/Header.astro";
 import Presentation from "@components/Presentation.astro";
 import References from "@components/References.astro";
 import labels from "@content/_labels.json";
+import { SEO } from "astro-seo";
 
 export function getStaticPaths() {
   return [
@@ -24,6 +25,18 @@ const locale = Astro.params.locale ?? "fr";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+
+    <SEO
+      title="Nicolas Rio"
+      description={labels.seo.description[locale]}
+      openGraph={{
+        basic: {
+          title: "Nicolas Rio",
+          type: "website",
+          image: `https://nicolasrio.dev/open-graph-${locale}.jpg`,
+        },
+      }}
+    />
   </head>
 
   <body font-sans>

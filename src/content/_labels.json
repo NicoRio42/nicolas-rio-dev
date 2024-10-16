@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "description": {
+      "fr": "Ingénieur full stack | INSA Lyon",
+      "en": "Full stack Engineer | Sveltekit | Geomatic"
+    }
+  },
   "role": {
     "fr": "Ingénieur full stack | Sveltekit | Géomatique",
     "en": "Full stack Engineer | Sveltekit | Geomatic"

@@ -33,7 +33,7 @@ const locale = Astro.params.locale ?? "fr";
         basic: {
           title: "Nicolas Rio",
           type: "website",
-          image: `https://nicolasrio.dev/open-graph-${locale}.jpg`,
+          image: `${Astro.site?.toString()}open-graph-${locale}.jpg`,
         },
       }}
     />

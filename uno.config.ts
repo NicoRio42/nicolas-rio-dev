@@ -14,7 +14,7 @@ export default defineConfig({
     presetIcons(),
     presetTypography({
       cssExtend: {
-        h3: { "font-size": "1rem" },
+        h3: { "font-size": "1.125rem", "font-weight": "500" },
       },
     }),
     presetWebFonts({

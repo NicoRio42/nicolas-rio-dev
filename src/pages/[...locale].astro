@@ -46,38 +46,49 @@ const locale = Astro.params.locale ?? "fr";
     </main>
 
     <div fixed bottom-4 right-4 flex="~ col gap-2">
-      <article>
-        <ul>
-          <li>
-            <a href="#experiences">{labels.experiences.heading[locale]}</a>
-          </li>
+      <div id="menu-container" flex="~ col gap-2">
+        <article
+          id="menu-content"
+          p-2
+          bg-white
+          rounded
+          shadow-2xl
+          text-primary
+          class="hidden"
+        >
+          <ul>
+            <li>
+              <a href="#experiences">{labels.experiences.heading[locale]}</a>
+            </li>
 
-          <li>
-            <a href="#references">{labels.references.heading[locale]}</a>
-          </li>
+            <li>
+              <a href="#references">{labels.references.heading[locale]}</a>
+            </li>
 
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </article>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </article>
 
-      <button
-        type="button"
-        bg-white
-        rounded
-        border="solid 1 primary"
-        text-primary
-        flex
-        items-center
-        gap-2
-        py-1
-        px-2
-      >
-        <i i-carbon-menu inline-block w-5 h-5></i>
+        <button
+          type="button"
+          id="menu-btn"
+          bg-white
+          rounded
+          border="solid 1 primary"
+          text-primary
+          flex
+          items-center
+          gap-2
+          py-1
+          px-2
+        >
+          <i i-carbon-menu inline-block w-5 h-5></i>
 
-        Menu
-      </button>
+          Menu
+        </button>
+      </div>
 
       <a
         href={locale === "fr" ? "/en" : "/"}
@@ -90,3 +101,23 @@ const locale = Astro.params.locale ?? "fr";
     </div>
   </body>
 </html>
+
+<script>
+  (function () {
+    const menuBtn = document.getElementById("menu-btn");
+    const menuContent = document.getElementById("menu-content");
+    const menuContainer = document.getElementById("menu-container");
+
+    if (menuBtn === null || menuContent === null || menuContainer === null)
+      return;
+
+    menuBtn.addEventListener("click", () =>
+      menuContent.classList.toggle("hidden")
+    );
+
+    addEventListener("click", (e) => {
+      if (menuContainer.contains(e.target as unknown as HTMLElement)) return;
+      menuContent.classList.add("hidden");
+    });
+  })();
+</script>

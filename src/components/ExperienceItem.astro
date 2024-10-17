@@ -26,7 +26,20 @@ const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "short" });
   </h2>
 
   <p flex items-center gap-2 text="[#404040] 3" mt-2>
-    <i i-carbon-calendar inline-block h-5 w-5></i>
+    <!-- Using svg snippets and not unocss icon preset because it does not work when printing to pdf -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      inline-block
+      h-5
+      w-5
+      ><path
+        fill="currentColor"
+        d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 22H6V12h20zm0-16H6V6h4v2h2V6h8v2h2V6h4z"
+      ></path></svg
+    >
 
     <span>
       {labels.experiences.from[locale]}
@@ -50,7 +63,20 @@ const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "short" });
   </p>
 
   <p flex items-center gap-2 text="[#404040] 3" mt-1>
-    <i i-carbon-industry inline-block h-5 w-5></i>
+    <!-- Using svg snippets and not unocss icon preset because it does not work when printing to pdf -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      inline-block
+      h-5
+      w-5
+      ><path
+        fill="currentColor"
+        d="M29.53 6.15a1 1 0 0 0-1 0L20 10.38V7a1 1 0 0 0-1.45-.89L10 10.38V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v25h28V7a1 1 0 0 0-.47-.85M22 26h-4v-7h4Zm6 0h-4v-8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v8H4V4h4v9.62l10-5v5l10-5Z"
+      ></path></svg
+    >
 
     {data.employerOrClient}
   </p>

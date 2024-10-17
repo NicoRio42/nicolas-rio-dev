@@ -14,7 +14,7 @@ const { locale } = Astro.props;
 
 <ExpandableArticle locale={locale}>
   <div class="prose prose-neutral" max-w-full text-justify>
-    <h2 text-6 font-bold mt-0>{labels.hello[locale]}</h2>
+    <h2 text-6 font-bold mt-0 class="print:hidden">{labels.hello[locale]}</h2>
 
     {locale === "fr" ? <FrenchContent /> : <EnglishContent />}
   </div>

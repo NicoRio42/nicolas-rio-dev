@@ -7,15 +7,21 @@ import labels from "@content/_labels.json";
 export interface Props {
   locale: Locale;
   data: InferEntrySchema<"experiences">;
+  index: number;
 }
 
-const { data, locale } = Astro.props;
+const { data, locale, index } = Astro.props;
 
 const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "short" });
 ---
 
 <ExpandableArticle locale={locale}>
-  <h2 class="heading" text="4.5" font-bold>
+  <h2
+    class="heading"
+    text="4.5"
+    font-bold
+    class:list={{ "break-before-page": index !== 0 }}
+  >
     {data.title}
   </h2>
 

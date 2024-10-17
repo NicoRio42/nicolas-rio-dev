@@ -7,6 +7,7 @@ import Presentation from "@components/Presentation.astro";
 import References from "@components/References.astro";
 import labels from "@content/_labels.json";
 import { SEO } from "astro-seo";
+import "./global.css";
 
 export function getStaticPaths() {
   return [
@@ -57,7 +58,7 @@ const locale = Astro.params.locale ?? "fr";
       <Footer locale={locale} />
     </main>
 
-    <div fixed bottom-4 right-4 flex="~ col gap-2">
+    <div fixed bottom-4 right-4 flex="~ col gap-2" class="print:hidden">
       <div id="menu-container" flex="~ col gap-2">
         <article
           id="menu-content"

@@ -8,4 +8,4 @@ Mes atouts :
 - Force de proposition et adaptation rapide aux nouveaux environnements techniques.
 - Passionné par les défis techniques, je suis toujours à la recherche de solutions innovantes.
 
-En tant que freelance, je suis disponible pour des missions ponctuelles ou de longue durée. Si vous cherchez un expert pour concrétiser vos idées, je suis là pour vous accompagner !
+Je suis disponible pour des missions ponctuelles ou de longue durée. Si vous cherchez un expert pour concrétiser vos idées, je suis là pour vous accompagner !

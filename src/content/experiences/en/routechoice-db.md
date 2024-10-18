@@ -20,7 +20,8 @@ order: 2
 
 ### 📖 Background and challenges
 
-Orienteering is recognized by the French Ministry of Sport as a high-level discipline, and the French Orienteering Team supports the best French athletes as they prepare for international competitions. France is one of the world's top 6 orienteering nations.
+Orienteering is recognized by the French Ministry of Sport as a high-level discipline, and the French Orienteering Team supports the best French athletes for their preparation for international competitions. France is one of the world's top 6 orienteering nations.
+
 Faced with developments in the discipline, and the growing availability of performance data, the French team is constantly on the lookout for new analysis tools. I designed and produced Routechoice DB (routechoice-db.com), to support athletes in their day-to-day technical preparation.
 
 ### 🏗️ Implementation

@@ -27,7 +27,7 @@ Géodézic is a company specialized in orienteering events and tourism. It insta
 
 - Requirements analysis and technical design
 - Creation of a Progressive Web App (PWA)
-- Validation of control points passage via QR Code scan
+- Validation of control points via QR Code scan
 - Display of interactive content at each control point (simple content and questions)
 - Course results management (control points found, questions answered and timing)
 - Offline mode: can be used with an intermittent Internet connection

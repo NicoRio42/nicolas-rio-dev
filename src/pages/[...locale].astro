@@ -39,7 +39,7 @@ const locale = Astro.params.locale ?? "fr";
     />
   </head>
 
-  <body font-sans>
+  <body font-serif>
     <main>
       <div w-full h-8 bg-gray-600></div>
 
@@ -69,7 +69,7 @@ const locale = Astro.params.locale ?? "fr";
           text-primary
           class="hidden"
         >
-          <ul>
+          <ul font-heading>
             <li>
               <a href="#experiences">{labels.experiences.heading[locale]}</a>
             </li>

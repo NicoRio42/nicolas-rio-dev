@@ -20,8 +20,8 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        heading: "Poppins",
-        sans: "Roboto",
+        sans: "Poppins",
+        serif: "PT Serif",
       },
     }),
   ],
@@ -32,6 +32,6 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    heading: "font-heading text-heading",
+    heading: "font-sans text-heading",
   },
 });

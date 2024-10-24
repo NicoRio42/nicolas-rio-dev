@@ -20,14 +20,14 @@ const { locale } = Astro.props;
   />
 
   <div flex="~ col" justify-center text="left sm:right">
-    <h1 class="heading" text-8 leading-none>
+    <h1 class="heading" text-10 leading-none>
       <div>Nicolas</div>
 
       <div uppercase font-bold>Rio</div>
     </h1>
 
-    <p mt-4>{labels.role[locale]}</p>
+    <p mt-4 text="5 gray-800">{labels.role[locale]}</p>
 
-    <p>INSA Lyon</p>
+    <p text="5 gray-800">INSA Lyon</p>
   </div>
 </header>

@@ -81,6 +81,23 @@ const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "short" });
     {data.employerOrClient}
   </p>
 
+  <p text="[#404040] 3" mt-1>
+    <a
+      flex
+      items-center
+      gap-2
+      hover:text-primary
+      href={data.link}
+      target="_blank"
+    >
+      <i i-carbon-launch inline-block h-5 w-5></i>
+
+      <span underline>
+        {data.link.replace("https://", "").replace(/\/$/, "")}
+      </span>
+    </a>
+  </p>
+
   <div class="prose prose-neutral" max-w-full text-justify>
     <slot />
   </div>
